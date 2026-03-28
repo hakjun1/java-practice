@@ -7,5 +7,6 @@ public class ImmuatableMain1 {
 
         System.out.println(obj1.getValue());
         System.out.println(obj2.getValue());
+
     }
 }
