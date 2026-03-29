@@ -1,0 +1,34 @@
+package lang.math.test;
+
+import java.util.Random;
+
+public class LottoGenerator {
+        private final Random random = new Random();
+        private int[] lootoNumbers;
+        private int count;
+
+    public int[] generate() {
+        lootoNumbers = new int[6];
+        count = 0;
+
+        while (count < 6) {
+            //1부터 45까지의 숫자를 생성
+            int number = random.nextInt(45) + 1;
+            //중복되지 않는 경우에만 배열에 추가
+            if (isUnique(number)) {
+                lootoNumbers[count] = number;
+                count++;
+            }
+        }
+        return lootoNumbers;
+    }
+
+    private boolean isUnique(int number) {
+        for (int i = 0; i < count; i++) {
+            if (lootoNumbers[i] == number) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
