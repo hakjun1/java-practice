@@ -7,7 +7,7 @@ public class EnumMethodMain {
     public static void main(String[] args) {
         //모든 ENUM반환
         Grade[] values = Grade.values();
-        System.out.println("values = " + Arrays.toString(values));
+        System.out.println("values = " + Arrays.toString(values));//toString해야 이름이나옴
         for (Grade value : values) {
             System.out.println("name = " + value.name() + ", ordinal=" + value.ordinal());
             //ordinal 가급적 쓰지말자, 상수의 위치가 변경되면 전체가 변경된다.
