@@ -2,18 +2,18 @@ package collection.array;
 
 import java.util.Arrays;
 
-public class MyArrayListV1 {//자료구조 예제 점진적 구현
+public class MyArrayListV2 {//자료구조 예제 점진적 구현
 
     private static final int DEFAULT_CAPACITY = 5;//기본 수용량(용량)
 
     private Object[] elementData;//모든 데이터를 담는 Object
     private int size = 0;
 
-    public MyArrayListV1() {
+    public MyArrayListV2() {
         elementData = new Object[DEFAULT_CAPACITY];//수용량 이때생성
     }
 
-    public MyArrayListV1(int initialCapacity) {
+    public MyArrayListV2(int initialCapacity) {
         elementData = new Object[initialCapacity];
     }
 
@@ -22,8 +22,30 @@ public class MyArrayListV1 {//자료구조 예제 점진적 구현
     }
 
     public void add(Object e) {
+        //코드 추가
+        if (size == elementData.length) {
+            grow();
+        }
+
         elementData[size] = e;//초기 0번째에 값을 입력하고 1증가시킨다.
         size++; //첫번째 항복에 넣고 증가시킨다 점점 증가
+    }
+
+    //코드추가
+    private void grow() {
+        int oldCapacity = elementData.length; // 기존 배열의 크기
+        int newCapacity = oldCapacity * 2;
+        elementData = Arrays.copyOf(elementData, newCapacity);//참조를 바꿔버림
+        //inline활용
+
+/*
+        Object[] newArr = new Object[newCapacity];
+        for (int i = 0; i < elementData.length; i++) {
+            newArr[i] = elementData[i];
+        }
+        elementData = newArr;//참조를 바꿔버림
+*/
+
     }
 
     public Object get(int index) {

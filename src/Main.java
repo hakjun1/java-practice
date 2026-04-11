@@ -1,15 +1,35 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Arrays;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+
+public class Main {
+    private Object[] elementData;
+    private int size = 0;
+
+    // 생성자를 통해 외부 배열을 받아오도록 수정
+    public Main(Object[] initialArray) {
+        this.elementData = initialArray;
+        this.size = initialArray.length;
+    }
+
+    public Object get(int index) {
+        return elementData[index];
+    }
+
+    Object set(int index, Object element) {
+        Object oldValue = get(index);
+        elementData[index] = element;
+        return oldValue;
+    }
+
+    public static void main(String[] args) {
+        Object[] objArr = {1, 2, 3, 4, 5}; // 원본 데이터
+
+        // 생성자에 배열을 넘겨주며 인스턴스 생성
+        Main main = new Main(objArr);
+
+        Object set = main.set(3, 100); // 3번 인덱스를 100으로 교체
+
+        System.out.println("기존 값: " + set); // 4 출력
+        System.out.println("변경 후 배열: " + Arrays.toString(objArr)); // [1, 2, 3, 100, 5] 출력
     }
 }
