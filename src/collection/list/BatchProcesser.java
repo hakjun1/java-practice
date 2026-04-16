@@ -2,7 +2,8 @@ package collection.list;
 
 public class BatchProcesser {
 
-    private final MyList<Integer> list;
+    private final MyList<Integer> list;//숫자를처리하는 List라고 가정
+    //BatchProcesser는 MyList에 의존한다
 
     public BatchProcesser(MyList<Integer> list) {
         this.list = list;
