@@ -8,23 +8,24 @@ public class ListEx2 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<Integer> inputNum = new ArrayList<>();
-        int sum;
+        ArrayList<Integer> numbers = new ArrayList<>();
+
         System.out.println("n개의 정수를 입력하세요(종료 0)");
         while (true) {
-            int e = sc.nextInt();
-            inputNum.add(e);
-            if (e == 0) {
+            int input = sc.nextInt();
+            if (input == 0) {
                 break;
             }
+            numbers.add(input);
         }
-        inputNum.removeLast();
+
         System.out.println("출력");
-        for (Integer integer : inputNum) {
-            System.out.print(integer);
-            if (integer!= inputNum.getLast()) {
-            System.out.print(", ");
+        for (int i = 0; i < numbers.size(); i++) {//마지막을 알아야해서 iter못쓴다
+            System.out.print(numbers.get(i));
+            if (i < numbers.size() - 1) {
+                System.out.print(", ");
             }
+
         }
     }
 }
