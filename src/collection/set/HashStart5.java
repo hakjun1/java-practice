@@ -41,6 +41,9 @@ public class HashStart5 {
             bucket.add(value);
         }
     }
+    //hashcode와 equals를 둘다 동시에 구현해야한다.
+    //대부분은 String와 equals는 구현되어있다. 하지만 직접 구현하는객체가 문제가 된다.
+    //새로 재정의한 객체를 넣었는데 검색이 안되는경우 hashCode와 equals가 재정의 되었는지 확인한다
 
     private static int hashIndex(int value) {
         return value % CAPACITY;

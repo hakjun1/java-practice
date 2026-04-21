@@ -23,7 +23,7 @@ public class Member {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);//이걸 기반으로 hashcode 없으면 참조값사용(object기반)
+        return Objects.hash(id);//이걸 기반으로 hashcode 없으면 참조값사용(object기반)
     }
 
     @Override
