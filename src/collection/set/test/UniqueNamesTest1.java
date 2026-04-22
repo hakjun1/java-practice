@@ -11,11 +11,11 @@ public class UniqueNamesTest1 {
         Integer[] inputArr = {30, 20, 20, 10, 10};
 
         System.out.println(inputArr);
-        Set<Integer> inputSet = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
         for (Integer s : inputArr) {
-            inputSet.add(s);
+            set.add(s);
         }
-        for (Integer s : inputSet) {
+        for (Integer s : set) {
             System.out.println(s);
 
         }
