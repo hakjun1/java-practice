@@ -3,17 +3,11 @@ package collection.map.test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommonKeyValueSum1 {
+public class CommonKeyValueSum2 {
     public static void main(String[] args) {
-        Map<String, Integer> map1 = new HashMap<>();
-        map1.put("A", 1);
-        map1.put("B", 2);
-        map1.put("C", 3);
-
-        Map<String, Integer> map2 = new HashMap<>();
-        map2.put("B", 4);
-        map2.put("C", 5);
-        map2.put("D", 6);
+        Map<String, Integer> map1 = Map.of("A", 1, "B", 2, "C", 3);
+        Map<String, Integer> map2 = Map.of("B", 4, "C", 5, "D", 6);
+        //편하게 만든다. 대신 map안의 값을 수정할 수 없다. (불변)
 
         Map<String, Integer> result = new HashMap<>();
         for (String key : map1.keySet()) {//key를 반환
