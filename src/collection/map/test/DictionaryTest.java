@@ -1,13 +1,14 @@
 package collection.map.test;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class DictionaryTest {
     public static void main(String[] args) {
+        Map<String, String> dictionary = new HashMap<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("==단어 입력 단계==");
-        Map<String, String> map;
         String quit = null;
         String key;
         String value;
